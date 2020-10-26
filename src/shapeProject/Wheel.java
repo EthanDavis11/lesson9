@@ -42,11 +42,11 @@ public class Wheel extends Circle{
      
      public String toString(){
          double area = area();
-            Math.round(area);
-            String str = "Wheel\n";
-            str += "Radius: " + radius + "\n";
-            str += "(" + xPos + "," + yPos + ")";
-            str+= radius;
+         String str = "CIRCLE\n";
+           str += "Radius: " + radius + "\n";
+        str += "X-Y Position: " + "(" + xPos + "," + yPos + ")\n";
+        str += "Area = " + Math.round(area);
+        str += "\nSpokes = " + spokes;
             return str;
      }
 }

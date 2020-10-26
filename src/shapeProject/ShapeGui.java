@@ -69,10 +69,25 @@ public class ShapeGui extends javax.swing.JFrame {
         });
 
         WB.setText("Wheel");
+        WB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WBActionPerformed(evt);
+            }
+        });
 
         TB.setText("Triangle");
+        TB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBActionPerformed(evt);
+            }
+        });
 
         RB.setText("Rectangle");
+        RB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,6 +137,11 @@ public class ShapeGui extends javax.swing.JFrame {
         });
 
         SizeB.setText("Resize");
+        SizeB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SizeBActionPerformed(evt);
+            }
+        });
 
         QuitB.setText("Quit");
         QuitB.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +228,8 @@ public class ShapeGui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void QuitBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitBActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        w.dispose();
     }//GEN-LAST:event_QuitBActionPerformed
 
     private void erase() {
@@ -233,6 +254,35 @@ public class ShapeGui extends javax.swing.JFrame {
         TA.setText(s.toString());
 
     }//GEN-LAST:event_MoveBActionPerformed
+
+    private void WBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WBActionPerformed
+       erase();
+        s = new Wheel(0, 0, 50,3);
+        s.draw(p);
+        TA.setText(s.toString());
+    }//GEN-LAST:event_WBActionPerformed
+
+    private void RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBActionPerformed
+        erase();
+        s = new Rect(0, 0, 50,50);
+        s.draw(p);
+        TA.setText(s.toString());
+    }//GEN-LAST:event_RBActionPerformed
+
+    private void TBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBActionPerformed
+        erase();
+        s = new Triangle(0, 0, 100,0,50,100);
+        s.draw(p);
+        TA.setText(s.toString());
+    }//GEN-LAST:event_TBActionPerformed
+
+    private void SizeBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SizeBActionPerformed
+        double x = Double.parseDouble(JOptionPane.showInputDialog(this, "Enter Strech Factor", "0"));
+        erase();
+        s.strechBy(x);
+        s.draw(p);
+        TA.setText(s.toString());
+    }//GEN-LAST:event_SizeBActionPerformed
 
     /**
      * @param args the command line arguments

@@ -58,7 +58,7 @@ public class Rect extends Shape{
         for (int i = 0; i < 10; i++) {
             Math.round(area);
         }
-        str += "(" + xPos + "," + yPos + ")";
+        str += "X-Y Position: " + "(" + xPos + "," + yPos + ")\n";
         str += "Width x Height: " + width + " x " + height + "\n";
         str += "Area = " + area;
         return str;
