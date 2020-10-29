@@ -1,3 +1,4 @@
+package EmployeeAssignment;
 
 abstract public class Employee {
 	protected String name;

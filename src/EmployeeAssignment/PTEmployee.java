@@ -9,17 +9,15 @@ package EmployeeAssignment;
  *
  * @author etha6200
  */
-public class FTEmployee extends Employee{
+public class PTEmployee extends Employee{
     
-    public FTEmployee(){
+    public PTEmployee(){
         super();
     }
    
     public double getPay(){
-        double pay = rate * 40 + (hours-40)*(rate*2);
+        double pay = rate * hours;
         total_pay+=pay;
         return pay;
-
-            
 }
 }
