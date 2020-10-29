@@ -234,6 +234,7 @@ public class EmployeeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+        
         Employee temp;
         String nm,type;
         int hours;
